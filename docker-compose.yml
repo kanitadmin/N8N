@@ -29,9 +29,12 @@ services:
     restart: always
     environment:
       - GENERIC_TIMEZONE=Asia/Bangkok
+      - TZ=Asia/Bangkok
       - N8N_HOST=${DOMAIN_NAME}
       - WEBHOOK_URL="https://${DOMAIN_NAME}/"
-      - VUE_APP_URL_BASE_API="https://n8nio.sillek.com"
+      - WEBHOOK_TUNNEL_URL="https://${DOMAIN_NAME}/"
+      - VUE_APP_URL_BASE_API="https://${DOMAIN_NAME}/"
+      - N8N_PROTOCOL=https
       - DB_TYPE=postgresdb
       - DB_POSTGRESDB_HOST=postgres
       - DB_POSTGRESDB_PORT=5432
